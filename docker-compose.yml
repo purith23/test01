@@ -6,3 +6,4 @@ services:
     volumes:
       - ./:/usr/share/nginx/html
     restart: always
+#forced update
