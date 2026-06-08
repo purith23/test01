@@ -5,9 +5,15 @@ on:
     branches:
       - main
 
+# --- ADD THIS NEW BLOCK ---
+permissions:
+  contents: read
+  packages: write
+# --------------------------
+
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest # Uses GitHub's free cloud servers, not your PC
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
