@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  web:
+    image: Nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+    restart: always
