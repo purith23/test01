@@ -3,179 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University Landing</title>
+    <title>Pink Dream Test Site</title>
 
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: Arial, sans-serif;
+        font-family: "Poppins", Arial, sans-serif;
       }
 
       body {
-        background: #0f172a;
-        color: #e2e8f0;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+        min-height: 100vh;
+        overflow-x: hidden;
+        color: #fff;
       }
 
-      /* NAV */
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 10%;
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        position: sticky;
-        top: 0;
+      /* floating glow circles */
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.6;
+        animation: float 6s infinite ease-in-out;
       }
 
-      nav h2 {
-        color: #38bdf8;
+      .c1 {
+        width: 200px;
+        height: 200px;
+        background: #ff4fd8;
+        top: 10%;
+        left: 10%;
       }
 
-      nav ul {
-        display: flex;
-        list-style: none;
-        gap: 20px;
+      .c2 {
+        width: 250px;
+        height: 250px;
+        background: #ffb3ec;
+        bottom: 10%;
+        right: 10%;
+        animation-delay: 2s;
       }
 
-      nav a {
-        color: #e2e8f0;
-        text-decoration: none;
-        transition: 0.3s;
+      .c3 {
+        width: 180px;
+        height: 180px;
+        background: #ff66c4;
+        top: 50%;
+        left: 70%;
+        animation-delay: 4s;
       }
 
-      nav a:hover {
-        color: #38bdf8;
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
       }
 
-      /* HERO */
-      .hero {
-        height: 90vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      /* glass container */
+      .container {
+        position: relative;
+        z-index: 2;
         text-align: center;
-        padding: 0 20px;
-        background: radial-gradient(circle at top, #1e293b, #0f172a);
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
-        color: #38bdf8;
-      }
-
-      .hero p {
-        max-width: 600px;
-        margin-bottom: 25px;
-        color: #94a3b8;
-      }
-
-      .btn {
-        padding: 12px 28px;
-        background: #38bdf8;
-        color: #0f172a;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-      }
-
-      .btn:hover {
-        background: #0ea5e9;
-        transform: scale(1.05);
-      }
-
-      /* FEATURES */
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 80px 10%;
+        padding: 80px 20px;
       }
 
       .card {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 400px;
+        margin: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      p {
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #ff4fd8;
+        color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(255, 79, 216, 0.4);
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+        background: #ff2ec4;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin-top: 40px;
+      }
+
+      .mini {
+        background: rgba(255, 255, 255, 0.25);
+        padding: 20px;
         border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
         transition: 0.3s;
       }
 
-      .card:hover {
+      .mini:hover {
         transform: translateY(-8px);
-        border-color: #38bdf8;
+        background: rgba(255, 255, 255, 0.35);
       }
 
-      .card h3 {
-        margin-bottom: 10px;
-        color: #38bdf8;
-      }
-
-      /* FOOTER */
       footer {
-        text-align: center;
-        padding: 20px;
-        background: #020617;
-        color: #64748b;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.2rem;
-        }
-
-        nav {
-          flex-direction: column;
-          gap: 10px;
-        }
+        margin-top: 60px;
+        font-size: 0.9rem;
+        opacity: 0.8;
       }
     </style>
   </head>
 
   <body>
-    <nav>
-      <h2>UniCamb</h2>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Programs</a></li>
-        <li><a href="#">Admissions</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- glowing background shapes -->
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
 
-    <section class="hero">
-      <h1>Welcome to University of Cambodia</h1>
-      <p>
-        A modern learning environment built for innovation, creativity, and
-        future-ready skills.
-      </p>
-      <a href="#" class="btn">Explore More</a>
-    </section>
-
-    <section class="features">
+    <div class="container">
       <div class="card">
-        <h3>📚 Learning</h3>
-        <p>High-quality academic programs designed for success.</p>
+        <h1>Pink Dream ✨</h1>
+        <p>A cute colorful test website with soft glow vibes.</p>
+        <a href="#" class="btn">Get Started</a>
       </div>
 
-      <div class="card">
-        <h3>🌐 Global</h3>
-        <p>Connected with international education standards.</p>
+      <div class="grid">
+        <div class="mini">💖 Cute Design</div>
+        <div class="mini">🌸 Soft Colors</div>
+        <div class="mini">✨ Smooth UI</div>
+        <div class="mini">🎀 Unique Style</div>
       </div>
 
-      <div class="card">
-        <h3>💡 Innovation</h3>
-        <p>Encouraging creativity and modern thinking.</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2026 University of Cambodia. All rights reserved.</p>
-    </footer>
+      <footer>© 2026 Pink Dream Test Site</footer>
+    </div>
   </body>
 </html>
